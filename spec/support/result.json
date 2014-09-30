@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Cambridge County Court and Family Court",
+        "address": {
+            "town": "Cambridge",
+            "address_lines": [
+                "Cambridge County Court and Family Court Hearing Centre",
+                "197 East Road"
+            ],
+            "type": "Postal",
+            "postcode": "CB1 1BA",
+            "county": "Cambridgeshire"
+        },
+        "lat": 52.2037125926829,
+        "dx_number": "97650 Cambridge 3",
+        "areas_of_law": [
+            "Forced marriage",
+            "Adoption",
+            "Money claims",
+            "Domestic violence",
+            "Children",
+            "Housing possession",
+            "High court",
+            "Bankruptcy",
+            "Divorce"
+        ],
+        "lon": 0.132065389149123,
+        "number": 162,
+        "types": [
+            "County Court",
+            "Family court"
+        ],
+        "slug": "cambridge-county-court-and-family-court"
+    }
+]

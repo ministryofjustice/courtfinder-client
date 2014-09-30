@@ -6,10 +6,10 @@ require 'courtfinder/client/version'
 Gem::Specification.new do |spec|
   spec.name          = "courtfinder-client"
   spec.version       = Courtfinder::Client::VERSION
-  spec.authors       = ["Aleksandar Simi\xC4\x87"]
+  spec.authors       = ["Aleksandar Simić"]
   spec.email         = ["alex.simic@digital.justice.gov.uk"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Courtfinder client gem}
+  spec.description   = %q{https://courttribunalfinder.service.gov.uk/ API client}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -20,4 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec"
+  spec.add_development_dependency "webmock"
+  spec.add_development_dependency "faraday"
 end
