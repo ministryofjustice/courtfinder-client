@@ -1,7 +1,7 @@
 require 'courtfinder/client/version'
 require 'faraday'
 require 'json'
-require 'cgi'
+require 'uri'
 
 module Courtfinder
   SERVER = 'http://54.72.152.89'
