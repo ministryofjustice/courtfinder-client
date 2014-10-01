@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["alex.simic@digital.justice.gov.uk"]
   spec.summary       = %q{Courtfinder client gem}
   spec.description   = %q{https://courttribunalfinder.service.gov.uk/ API client}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/ministryofjustice/courtfinder-client"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
