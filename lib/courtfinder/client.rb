@@ -1,6 +1,7 @@
 require 'courtfinder/client/version'
 require 'faraday'
 require 'json'
+require 'cgi'
 
 module Courtfinder
   SERVER = 'http://54.72.152.89'
@@ -9,7 +10,7 @@ module Courtfinder
       PATH='/search/results.json?area_of_law=Housing+possession&postcode='
 
       def get postcode
-        conn = Faraday.get "#{Courtfinder::SERVER}#{PATH}#{postcode}"
+        conn = Faraday.get "#{Courtfinder::SERVER}#{PATH}#{URI.escape(postcode)}"
         process_address conn.body
       end
 
