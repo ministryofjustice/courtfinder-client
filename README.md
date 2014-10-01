@@ -22,6 +22,8 @@ Or install it yourself as:
 
 Sample usage:
 
+    require 'courtfinder/client'
+
     client = Courtfinder::Client::HousingPossession.new
     client.get 'SG8 0LT'
 
