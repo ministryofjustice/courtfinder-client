@@ -16,15 +16,19 @@ module Courtfinder
       private
 
       def process_address data
-        json = JSON.parse data
-        address_json = json[0]["address"]
-        name_n_street = "#{address_json["address_lines"].join("\n")}"
-        <<-EOS.chomp.gsub('  ', '')
-          #{name_n_street}
-          #{address_json["town"]}
-          #{address_json["county"]}
-          #{address_json["postcode"]}
-        EOS
+        if data == '[]'
+          data
+        else
+          json = JSON.parse data
+          address_json = json[0]["address"]
+          name_n_street = "#{address_json["address_lines"].join("\n")}"
+          <<-EOS.chomp.gsub('  ', '')
+            #{name_n_street}
+            #{address_json["town"]}
+            #{address_json["county"]}
+            #{address_json["postcode"]}
+          EOS
+        end
       end
     end
   end
