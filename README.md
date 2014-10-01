@@ -32,6 +32,14 @@ area of law for the given postcode.
 
 **TODO:** Add support for courts in other areas of law.
 
+## Updating the gem
+
+When you add more features and you feel that a significant change has
+been made, increase the gem version number and publish it to [RubyGems](https://rubygems.org/):
+
+    $ gem build courtfinder-client.gemspec
+    $ gem push courtfinder-client-X.Y.Z.gem
+
 ## Contributing
 
 1. Fork it ( https://github.com/ministryofjustice/courtfinder-client/fork )
