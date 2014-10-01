@@ -1,6 +1,8 @@
 # Courtfinder::Client
 
-TODO: Write a gem description
+Client for UK Government [Court and tribunal finder](https://courttribunalfinder.service.gov.uk/) API
+
+Currently **only** implemented querying courts for **'Housing possesion'**
 
 ## Installation
 
@@ -18,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Sample usage:
+
+    client = Courtfinder::Client::HousingPossession.new
+    client.get 'SG8 0LT'
+
+Which will return the address of the court in 'Housing possession'
+area of law for the given postcode.
+
+**TODO:** Add support for courts in other areas of law.
 
 ## Contributing
 
