@@ -11,24 +11,21 @@ module Courtfinder
 
       def get postcode
         conn = Faraday.get "#{Courtfinder::SERVER}#{PATH}#{URI.escape(postcode)}"
-        process_address conn.body
+        process conn.body
+      end
+
+      def empty?
+        @json.empty?
       end
 
       private
 
-      def process_address data
-        if data == '[]'
-          data
-        else
-          json = JSON.parse data
-          address_json = json[0]["address"]
-          name_n_street = "#{address_json["address_lines"].join("\n")}"
-          <<-EOS.chomp.gsub('  ', '')
-            #{name_n_street}
-            #{address_json["town"]}
-            #{address_json["county"]}
-            #{address_json["postcode"]}
-          EOS
+      def process data
+        @json = JSON.parse data
+        unwanted_attributes = ['areas_of_law', 'slug', 'dx_number',
+                               'lon', 'lat', 'types', 'number']
+        @json.each do |court|
+          unwanted_attributes.each {|attr| court.delete attr }
         end
       end
     end
