@@ -14,10 +14,11 @@ describe Courtfinder::Client::HousingPossession do
   end
 
   describe '.get' do
-    context 'when given postcode with no spaces' do
-      postcode = 'sg80lt'
 
-      before { stub_with postcode }
+    before { stub_with postcode }
+
+    context 'when given postcode with no spaces' do
+      let(:postcode) { 'sg80lt' }
 
       it 'should return the court address' do
         expect(client.get(postcode)).to eql json
@@ -25,9 +26,7 @@ describe Courtfinder::Client::HousingPossession do
     end
 
     context 'when given postcode with spaces' do
-      postcode = 'SG8 0LT'
-
-      before { stub_with postcode }
+      let(:postcode) { 'SG8 0LT' }
 
       it 'should return the court address' do
         expect(client.get(postcode)).to eql json
