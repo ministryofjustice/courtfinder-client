@@ -5,7 +5,7 @@ require 'courtfinder/client'
 describe Courtfinder::Client::HousingPossession do
   before { WebMock.disable_net_connect! }
 
-  let(:json) do
+  let(:result) do
     [{ "name" => "Cambridge County Court and Family Court",
        "address" =>
        { "town" => "Cambridge",
@@ -44,7 +44,7 @@ describe Courtfinder::Client::HousingPossession do
       let(:postcode) { 'sg80lt' }
 
       it 'should return the court address' do
-        expect(client.get(postcode)).to eql json
+        expect(client.get(postcode)).to eql result
       end
     end
 
@@ -52,7 +52,7 @@ describe Courtfinder::Client::HousingPossession do
       let(:postcode) { 'SG8 0LT' }
 
       it 'should return the court address' do
-        expect(client.get(postcode)).to eql json
+        expect(client.get(postcode)).to eql result
       end
     end
 
