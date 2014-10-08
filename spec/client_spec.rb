@@ -60,7 +60,7 @@ describe Courtfinder::Client::HousingPossession do
       let(:postcode) { 'fake' }
       before { blank_result postcode }
 
-      it 'should return an error' do
+      it 'should return a blank array' do
         expect(client.get(postcode)).to eql []
       end
     end
