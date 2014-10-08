@@ -21,11 +21,15 @@ module Courtfinder
       private
 
       def process data
-        @json = JSON.parse data
-        unwanted_attributes = ['areas_of_law', 'slug', 'dx_number',
+        begin
+          @json = JSON.parse data
+          unwanted_attributes = ['areas_of_law', 'slug', 'dx_number',
                                'lon', 'lat', 'types', 'number']
-        @json.each do |court|
-          unwanted_attributes.each {|attr| court.delete attr }
+          @json.each do |court|
+            unwanted_attributes.each {|attr| court.delete attr }
+          end
+        rescue JSON::ParserError
+          @json = []
         end
       end
     end

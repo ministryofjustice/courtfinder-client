@@ -37,31 +37,45 @@ describe Courtfinder::Client::HousingPossession do
                  :headers => {})
   end
 
+  def error_result postcode
+    stub_request(:get, full_url(postcode))
+      .to_return(:status => 404,
+                 :body => '',
+                 :headers => {})
+  end
+
   describe '.get' do
-    before { stub_with postcode }
+    context 'with valid postcode' do
+      before { stub_with postcode }
 
-    context 'when given postcode with no spaces' do
-      let(:postcode) { 'sg80lt' }
+      context 'when given postcode with no spaces' do
+        let(:postcode) { 'sg80lt' }
 
-      it 'should return the court address' do
-        expect(client.get(postcode)).to eql result
+        it 'should return the court address' do
+          expect(client.get(postcode)).to eql result
+        end
       end
-    end
 
-    context 'when given postcode with spaces' do
-      let(:postcode) { 'SG8 0LT' }
+      context 'when given postcode with spaces' do
+        let(:postcode) { 'SG8 0LT' }
 
-      it 'should return the court address' do
-        expect(client.get(postcode)).to eql result
+        it 'should return the court address' do
+          expect(client.get(postcode)).to eql result
+        end
       end
     end
 
     context 'when invalid postcode is provided' do
-      let(:postcode) { 'fake' }
-      before { blank_result postcode }
-
       it 'should return a blank array' do
+        postcode = 'fake'
+        blank_result postcode
         expect(client.get(postcode)).to eql []
+      end
+
+      it 'should not raise an error' do
+        postcode = 'break'
+        error_result postcode
+        expect { client.get(postcode) }.not_to raise_error
       end
     end
   end
