@@ -10,8 +10,14 @@ module Courtfinder
       PATH='/search/results.json?area_of_law=Housing+possession&postcode='
 
       def get postcode
-        conn = Faraday.get "#{Courtfinder::SERVER}#{PATH}#{URI.escape(postcode)}"
-        process conn.body
+        conn = nil
+        begin
+          endpoint = "#{Courtfinder::SERVER}#{PATH}#{URI.escape(postcode)}"
+          Timeout::timeout(1.5) { conn = Faraday.get endpoint }
+          process conn.body
+        rescue Faraday::TimeoutError
+          []
+        end
       end
 
       def empty?

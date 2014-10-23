@@ -46,10 +46,9 @@ describe Courtfinder::Client::HousingPossession do
 
   describe '.get' do
     context 'with valid postcode' do
-      before { stub_with postcode }
-
       context 'when given postcode with no spaces' do
         let(:postcode) { 'sg80lt' }
+        before { stub_with postcode }
 
         it 'should return the court address' do
           expect(client.get(postcode)).to eql result
@@ -58,9 +57,22 @@ describe Courtfinder::Client::HousingPossession do
 
       context 'when given postcode with spaces' do
         let(:postcode) { 'SG8 0LT' }
+        before { stub_with postcode }
 
         it 'should return the court address' do
           expect(client.get(postcode)).to eql result
+        end
+      end
+
+      context 'when a timeout occurs' do
+        let(:postcode) { 'SG8 0LT' }
+        before do
+          stub_request(:get, full_url(postcode))
+            .to_raise(Timeout::Error)
+        end
+
+        it 'should return a blank array' do
+          expect(client.get(full_url(postcode))).to eql []
         end
       end
     end
