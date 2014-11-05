@@ -4,7 +4,7 @@ require 'json'
 require 'uri'
 
 module Courtfinder
-  SERVER = 'http://54.72.152.89'
+  SERVER = 'https://courttribunalfinder.service.gov.uk/'
   module Client
     class HousingPossession
       PATH='/search/results.json?area_of_law=Housing+possession&postcode='
