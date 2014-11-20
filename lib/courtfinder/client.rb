@@ -16,7 +16,7 @@ module Courtfinder
           Timeout::timeout(1.5) { conn = Faraday.get endpoint }
           process conn.body
         rescue Faraday::TimeoutError
-          []
+          { error: 'timeout' }
         end
       end
 

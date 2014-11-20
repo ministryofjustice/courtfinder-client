@@ -71,8 +71,8 @@ describe Courtfinder::Client::HousingPossession do
             .to_raise(Timeout::Error)
         end
 
-        it 'should return a blank array' do
-          expect(client.get(full_url(postcode))).to eql []
+        it 'should error with message' do
+          expect(client.get(full_url(postcode))).to eql ({ error: 'timeout' })
         end
       end
     end
