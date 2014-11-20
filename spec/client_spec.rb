@@ -75,6 +75,20 @@ describe Courtfinder::Client::HousingPossession do
           expect(client.get(full_url(postcode))).to eql ({ error: 'timeout' })
         end
       end
+
+      context 'when invalid JSON is returned' do
+        let(:postcode) { 'SG8 0LT' }
+        before do
+          stub_request(:get, full_url(postcode))
+            .to_return(:status => 200,
+                       :body => 'some invalid string',
+                       :headers => {})
+        end
+
+        it 'should error with message' do
+          expect(client.get(full_url(postcode))).to eql ({ error: 'invalid JSON returned' })
+        end
+      end
     end
 
     context 'when invalid postcode is provided' do

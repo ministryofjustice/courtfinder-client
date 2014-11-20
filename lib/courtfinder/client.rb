@@ -35,7 +35,7 @@ module Courtfinder
             unwanted_attributes.each {|attr| court.delete attr }
           end
         rescue JSON::ParserError
-          @json = []
+          @json = { error: 'invalid JSON returned' }
         end
       end
     end
