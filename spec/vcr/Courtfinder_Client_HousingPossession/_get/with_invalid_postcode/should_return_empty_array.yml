@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://courttribunalfinder.service.gov.uk/search/results.json?aol=Housing+possession&postcode=fake
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.41.0
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Mon, 24 Nov 2014 12:17:54 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '94'
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      Accept-Ranges:
+      - bytes
+      X-Varnish:
+      - '697574197'
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+    body:
+      encoding: UTF-8
+      string: '{"error":"MapIt doesn''t know this postcode: http://mapit.mysociety.org/postcode/partial/fake"}'
+    http_version: 
+  recorded_at: Mon, 24 Nov 2014 12:17:54 GMT
+recorded_with: VCR 2.9.3
