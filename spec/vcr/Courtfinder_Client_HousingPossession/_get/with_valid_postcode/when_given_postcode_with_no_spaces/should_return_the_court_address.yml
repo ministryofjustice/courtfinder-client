@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://courttribunalfinder.service.gov.uk/search/results.json?aol=Housing+possession&postcode=sg80lt
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - excon/0.41.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Server:
+      - nginx/1.4.6
+      Date:
+      - Mon, 24 Nov 2014 12:17:53 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '5941'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      X-Frame-Options:
+      - SAMEORIGIN
+      Accept-Ranges:
+      - bytes
+      X-Varnish:
+      - '697574194'
+      Age:
+      - '0'
+      Via:
+      - 1.1 varnish
+    body:
+      encoding: UTF-8
+      string: '[{"distance": 14.32, "name": "Cambridge County Court and Family Court",
+        "address": {"town": "Cambridge", "address_lines": ["Cambridge County Court
+        and Family Court Hearing Centre", "197 East Road"], "type": "Postal", "postcode":
+        "CB1 1BA", "county": "Cambridgeshire"}, "lat": 52.2037125926829, "dx_number":
+        "97650 Cambridge 3", "areas_of_law": ["Forced marriage", "Adoption", "Money
+        claims", "Domestic violence", "Children", "Housing possession", "High court",
+        "Bankruptcy", "Divorce"], "lon": 0.132065389149123, "number": 162, "types":
+        ["Family court", "County Court"], "slug": "cambridge-county-court-and-family-court"},
+        {"distance": 15.49, "name": "Bedford County Court and Family Court", "address":
+        {"town": "Bedford", "address_lines": ["Bedford County Court and Family Court
+        Hearing Centre", "P.O. Box 1405", "3 St Paul''s Square"], "type": "Postal",
+        "postcode": "MK40 9DN", "county": "Bedfordshire"}, "lat": 52.1350290338706,
+        "dx_number": "97590 Bedford 3", "areas_of_law": ["Children", "Divorce", "Domestic
+        violence", "Bankruptcy", "High court", "Money claims", "Housing possession"],
+        "lon": -0.467880322006416, "number": 124, "types": ["County Court", "Family
+        court"], "slug": "bedford-county-court-and-family-court"}, {"distance": 18.02,
+        "name": "Luton County Court and Family Court", "address": {"town": "Luton",
+        "address_lines": ["Luton County Court and Family Court Hearing Centre", "2nd
+        Floor", "Cresta House", "Alma Street"], "type": "Postal", "postcode": "LU1
+        2PU", "county": "Bedfordshire"}, "lat": 51.8811279872015, "dx_number": "97760
+        Luton 4", "areas_of_law": ["Money claims", "Domestic violence", "Housing possession",
+        "Forced marriage", "Adoption", "Bankruptcy", "High court", "Divorce", "Children"],
+        "lon": -0.418919711521327, "number": 258, "types": ["Family court", "County
+        Court"], "slug": "luton-county-court-and-family-court"}, {"distance": 18.75,
+        "name": "Hertford County Court and Family Court", "address": {"town": "Hertford",
+        "address_lines": ["Hertford County Court and Family Hearing Centre", "P.O.Box
+        373"], "type": "Postal", "postcode": "SG13 9HT", "county": "Hertfordshire"},
+        "lat": 51.796089552427, "dx_number": "97710 Hertford 2", "areas_of_law": ["Children",
+        "Divorce", "Forced marriage", "Domestic violence", "Bankruptcy", "Money claims",
+        "Housing possession", "Adoption"], "lon": -0.0765909721207512, "number": 221,
+        "types": ["County Court", "Family court"], "slug": "hertford-county-court-and-family-court"},
+        {"distance": 23.59, "name": "St Albans County Court", "address": {"town":
+        "St. Albans", "address_lines": ["St Albans County Court", "The Court Building",
+        "Bricket Road"], "type": "Postal", "postcode": "AL1 3JW", "county": "Hertfordshire"},
+        "lat": 51.7516188860504, "dx_number": "97770 St Albans 2", "areas_of_law":
+        ["Bankruptcy", "Money claims", "Housing possession"], "lon": -0.335521986503323,
+        "number": 313, "types": ["County Court"], "slug": "st-albans-county-court"},
+        {"distance": 27.45, "name": "Milton Keynes County Court and Family Court",
+        "address": {"town": "Central Milton Keynes", "address_lines": ["Milton Keynes
+        County Court and Family Court Hearing Centre", "351 Silbury Boulevard", "Witan
+        Gate East"], "type": "Postal", "postcode": "MK9 2DT", "county": "Buckinghamshire"},
+        "lat": 52.0412079044384, "dx_number": "136266 Milton Keynes 6", "areas_of_law":
+        ["Forced marriage", "Money claims", "Divorce", "Domestic violence", "Children",
+        "Adoption", "Housing possession", "Bankruptcy", "High court"], "lon": -0.765354379292703,
+        "number": 388, "types": ["County Court", "Family court"], "slug": "milton-keynes-county-court-and-family-court"},
+        {"distance": 30.24, "name": "Watford County Court and Family Court", "address":
+        {"town": "Watford", "address_lines": ["Watford County Court and Family Court
+        Hearing Centre", "3rd Floor", "Cassiobury House", "11-19 Station Road"], "type":
+        "Postal", "postcode": "WD17 1EZ", "county": "Hertfordshire"}, "lat": 51.663675400498,
+        "dx_number": "122740 Watford 5 ", "areas_of_law": ["Children", "Divorce",
+        "Forced marriage", "Domestic violence", "Money claims", "Housing possession",
+        "Adoption"], "lon": -0.398796389317627, "number": 362, "types": ["County Court",
+        "Family court"], "slug": "watford-county-court-and-family-court"}, {"distance":
+        31.55, "name": "Edmonton County Court and Family Court", "address": {"town":
+        "Edmonton", "address_lines": ["Hearing Centre", "Court House", "59 Fore Street"],
+        "type": "Postal", "postcode": "N18 2TN", "county": "London"}, "lat": 51.6107379724959,
+        "dx_number": "136686 Edmonton 3", "areas_of_law": ["Children", "Divorce",
+        "Domestic violence", "Money claims", "Housing possession"], "lon": -0.0660789741569261,
+        "number": 194, "types": ["County Court", "Family court"], "slug": "edmonton-county-court-and-family-court"},
+        {"distance": 32.34, "name": "Barnet Civil and Family Courts Centre", "address":
+        {"town": "London", "address_lines": ["Hearing Centre", "St Marys Court", "Regents
+        Park Road", "Finchley Central"], "type": "Postal", "postcode": "N3 1BQ", "county":
+        "London"}, "lat": 51.6004367904275, "dx_number": "122570 Finchley (Church
+        End)", "areas_of_law": ["Children", "Divorce", "Domestic violence", "Money
+        claims", "Housing possession", "Adoption"], "lon": -0.195606730619243, "number":
+        117, "types": ["Family court", "County Court"], "slug": "barnet-civil-and-family-courts-centre"},
+        {"distance": 34.19, "name": "Aylesbury County Court and Family Court", "address":
+        {"town": "Aylesbury", "address_lines": ["Aylesbury County Court and Family
+        Court Hearing Centre", "Walton Street"], "type": "Postal", "postcode": "HP21
+        7QZ", "county": "Buckinghamshire"}, "lat": 51.8107805904416, "dx_number":
+        "97820 Aylesbury 10", "areas_of_law": ["Children", "Divorce", "Forced marriage",
+        "Domestic violence", "Bankruptcy", "Money claims", "Housing possession", "Adoption"],
+        "lon": -0.808170859422031, "number": 113, "types": ["County Court", "Family
+        court"], "slug": "aylesbury-county-court-and-family-court"}]'
+    http_version: 
+  recorded_at: Mon, 24 Nov 2014 12:17:53 GMT
+recorded_with: VCR 2.9.3
