@@ -7,7 +7,7 @@ module Courtfinder
   SERVER = 'https://courttribunalfinder.service.gov.uk'
   module Client
     class HousingPossession
-      PATH='/search/results.json?aol=Housing+possession&postcode='
+      PATH='/search/results.json?aol=housing-possession&postcode='
       def get postcode
         conn = nil
         begin
